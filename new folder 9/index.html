@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <style>
+
+
+    body {
+      height: 2000px;
+      color:  orange;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    header {
+      text-align: center;
+      opacity: 0.9;
+      background-color:white;
+      padding: 10px 0 0;
+      position: fixed;
+      width: 100%; height: 100px;
+      
+    }
+    img.logo {
+      width: 110px;
+      padding: 5px;
+      margin: 0%;
+      height: 50px;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+      width: 90%;
+      float: right;
+    }
+    li {
+      display: inline-block;
+      padding: 5px 10px;
+    }
+    a {
+      color:  rgba(255, 166, 0, 0.97);
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .active {
+      border-bottom: 3px solid orange;
+      padding-bottom: 10px;
+    }
+    article {
+        background-color: white;
+        height: 500px;
+        background-image: url("./new3.jpg");
+        background-position:top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top: 20px; margin-top: 50px;
+      }
+      img.home{
+        position: fixed;bottom:5px;
+    right: 10px;
+    width: 40px;
+      }
+      div{
+        font-weight: bold;
+        float: left;
+      }
+      h1{
+        padding-left: 50px;
+        padding-top: 40px;
+        display: inline;
+        margin-top: 20px;
+        margin-left: 20px;
+        text-shadow:0px 0px 0 rgb(0, 0, 0),
+        1px 1px 0 rgb(0, 0, 0)
+        ,2px 2px 0 rgb(0, 0, 0),
+        3px 3px 0 rgb(0, 0, 0),4px 4px 0 rgb(0, 0, 0),
+        0px 0px 20px rgba(0,0,0,.2);
+}
+        
+      p{
+        padding-left: 120px;
+        padding-top: 2px;
+        margin-top: 7px;
+  letter-spacing: .10em;
+  text-shadow:2.5px 2.5px 0px rgba(0, 0, 0, 0.8);
+  
+      }
+     
+img.gif{
+  width: 400px;height: 200px;
+}
+div.box{ 
+      box-sizing: border-box;
+      width: 100vh;
+      border: 5px solid orange;
+      
+      padding: 2px;
+    }
+    .box1 {
+      background-image: url("./new2.jpg"); 
+        background-position:top;
+        opacity: 0.7;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 425px; width: 425px;
+        float:center;
+      }
+      .box2 { 
+        height: 425px; width: 150px;
+        background: orange;
+        padding-right: 0px;margin-right: 0px;
+      }
+ul ,li{
+list-style: none;
+color:white;
+padding-top: 20px;padding-left: 2px;
+}
+
+div.container {
+  padding: 0 0;
+  max-width: 700px;
+  color: #ffa500;
+
+}
+p.text {
+  font-size: 30PX;
+  font-weight: bold;
+  transform-origin:right center;
+  animation: fall 5s infinite;
+  color: #ffa500;
+  width: 50px; height: 50px;
+  padding-left: 50px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+}
+
+@keyframes fall {
+  from, 15% {
+    transform: rotate(0) translateX(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.07, 2.02, .67, .57);
+  }
+  50%,
+  60% {
+    transform: rotate(-90deg) translateX(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.13, .84, .82, 1);
+  }
+  85%,
+  to {
+    transform: rotate(-90deg) translateX(-200px);
+    opacity: 0;
+  }
+}
+.gallery {
+  --g: 8px;   /* the gap */
+  --s: 400px; /* the size */
+  
+  display: grid;
+  border-radius: 50%;
+  padding-top: 50px;padding-left: 100px;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 400px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+}
+.gallery img:hover {
+  --_i: 1;
+  z-index: 1;
+  transition: transform .2s, clip-path .3s .2s, z-index 0s;
+}
+.gallery:hover img {
+  transform: translate(0,0);
+}
+.gallery > img:nth-child(1) {
+  clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+  --_y: calc(-1*var(--g))
+}
+.gallery > img:nth-child(2) {
+  clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: var(--g)
+}
+.gallery > img:nth-child(3) {
+  clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+  --_y: var(--g)
+}
+.gallery > img:nth-child(4) {
+  clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: calc(-1*var(--g))
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background:white;
+  
+}
+button {
+        background-color:orange;
+        font-size: 20px; 
+        border-radius: 8px;
+        border: none;
+        padding: 4px;
+        margin-top: 0px;
+        padding-left: 10px;
+}
+.footer{
+  background-image: url(./new3.jpg);
+  background-position: bottom;
+  width: 1400px; background-repeat: no-repeat;
+  margin-top: 30px;opacity: 0,7;
+}
+  </style>
+  </head>
+  <body>
+    <header id="header">
+      <img src="./images(3).jpg" alt="logo" class="logo" id="logo"/>
+      <ul>
+        <li class="active" id="active"><a href="https://t.me/Basem4Nickelodeon">Home</a></li>
+        <li><a href="">VIDEOS</a></li>
+        <li><a href="">GAMES</a></li>
+        <li><a href="">LATEST SHOW</a></li>
+        <li><a href=""> CONTACT US</a></li>
+
+      </ul>
+    </header>
+    <article>
+    <a href="https://t.me/Basem4Nickelodeon"><img class="home"  src="./house.png"/></a>
+    </article>
+    <divclass="divv">
+      <h1> WELCOME,</h1>
+      <P> ARE U READY FOR MORE??</P>
+    </div>
+    <div >
+    <pre><img class="gif" src="./gif.gif" alt="">
+        </div>
+        <center>
+        <div class=box>
+        <div class="box1">which one do u watch today?</div>
+        <div class="box2">
+            <ul>
+              <a class="li" href="https://t.me/Basem4SpongeBob"> <li>spongpoop</li> </a><br>
+              <a class="li" href="https://t.me/basem4Nickelodeon/1998"><li>temon&bomba</li></a><br>
+              <a class="li" href="https://t.me/basem4Nickelodeon/1723"><li>gamboll</li></a><br>
+              <a class="li" href="https://t.me/basem4Nickelodeon/2318"><li>spider-man</li><br>
+                <a class="li" href="https://t.me/basem4Nickelodeon/1801"><li>the loud house</li><br>
+                  <a class="li" href="https://t.me/basem4Nickelodeon/1893"><li>the penguines</li>
+                    <a class="li" href="https://t.me/Basem4Nickelodeon/2983"><li> zaza w grger</li>
+            </ul>
+          </div>
+    </div>
+    </center>
+    <div class="container">
+      <p class="text" >nickloden</p>
+    </div>
+<br>
+<br>
+      
+        <div class ="ninja" style="clear: both; padding-left: 60px;padding-top: 20px;">
+          <h1> GAMES</h1> <br>
+<pre><a href="https://apps.apple.com/eg/app/ninja-turtles-legends/id1033282601" target="_blank"><img src="./ninja.jpg" alt="logo"
+        width="200"
+        height="200"></a><a href="https://apps.apple.com/eg/app/super-wings-jett-run/id1420335276" target="_blank"><img src="./super.jpg" alt="logo"
+        width="200"
+        height="200"></a><a href="https://apps.apple.com/eg/app/sonic-cd-classic/id454316134" target="_blank"><img src=".\sonic.jpg" alt="logo"
+        width="200"
+        height="200"></a><a href="https://apps.apple.com/eg/app/ben-10-alien-evolution/id1310602587" target="_blank"><img src=".\pen.jpg" alt="logo"
+        width="200"
+        height="200"></a><a href="https://apps.apple.com/eg/app/vlad-niki-run/id1533032073" target="_blank"><img src=".\vlad.jpg" alt="logo"
+        width="200"
+        height="200"></a><a href="https://apps.apple.com/eg/app/bubble-shooter-panda-pop/id700970012" target="_blank"><img src=".\panda.jpg" alt="logo"
+        width="200"
+        height="200"></a></pre>
+        </div>
+    <br>
+    <div> <h1> LATEST SHOWS</h1></div> <br>
+    <div class="gallery">
+      <img src="./gemy.jpg" alt="a hot air balloon" >
+      <img src="./moogh.jpg" alt="a sky photo of an old city">
+      <img src="./ragets.jpg" alt="a small boat">
+      <img src="season-4.jpg" alt="a forest">
+    </div>
+    <br>
+    <div class ="id" style="clear: both; padding-left: 60px;padding-top: 20px;">
+    <h1>contact us</h1>
+      <form style="padding-top: 20px;padding-left: 20px;">
+        <fieldset>
+          <legend style="font-size: 17px">LOGINING IN</legend><br>
+          <label for=""> </label> 
+          <input type="text" placeholder="username"><br>
+          <label for=""></label><br>
+          <input type="email" placeholder="password"> <br>
+          <a href=""> forget password ?</a>
+      </fieldset>
+      <P style=" color: gray;margin-top: 1px;">Don't have an account? <a href="">sign up</a></p><br>
+      <button style="text-align: center;" >sing in</button>
+  </FORM>
+    </div>
+    <br>
+    <div class ="footer" style="clear: both; ">
+    <footer >
+      <h5 style="text-align: center; padding-top: 170px; padding-bottom: 0px;margin: 0px;"> &copy; Designed by : nickloden</h5>
+    </footer>
+    </div>
+  </body>
+</html>
